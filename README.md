@@ -2,7 +2,7 @@
 #### About
 In 2003 someone created ticket **[JRASERVER-1391](https://jira.atlassian.com/browse/JRASERVER-1391)** in the Atlassian issue tracker about a problem of renaming groups in Jira. Since then there is no any convenient way to do it using an administration web-page.
  I've recently come across with the same problem and built this script. 
-The script allows you to rename bunch of groups in one transaction. It follows the[official recommendations](https://confluence.atlassian.com/jirakb/how-to-rename-a-group-in-jira-968662365.html) from Atlassian with changing names in all necessary tables.  
+The script allows you to rename bunch of groups in one transaction. It follows the [official recommendations](https://confluence.atlassian.com/jirakb/how-to-rename-a-group-in-jira-968662365.html) from Atlassian with changing names in all necessary tables.  
 **Note:** the script was written specifically for the **Atlassian Server** platform. Due to the [Functional differences in Atlassian Cloud](https://confluence.atlassian.com/display/Cloud/Functional+differences+in+Atlassian+Cloud), the script cannot be applied to Atlassian Cloud applications.
 #### How to use the script
  1. Just to remember: create a backup! 
