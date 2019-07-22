@@ -11,8 +11,10 @@ The script allows you to rename bunch of groups in one transaction. It follows t
 `psql -U user_name -d db_name -a -f ./jira-groups-renamer.sql`
  5. The script is running in one transaction. Therefore if something goes wrong, the changes won't be applied. Do not forget to run `rollback;` command in any worst case.
  6. During the running the script you can see output in the console about renaming results of each group.
- 7. Start Jira.
- 8. After running the script you should check filters and workflows that might contain group names. For that purpose you can easily use the find_filters_and_workflows.sql with two select statements.
+ 7. Start Jira. 
+ 8. After finishing the script you should check filters and workflows that might contain group names. For that purpose you can easily use the find_filters_and_workflows.sql with two select statements.
  9. Atlassian notices, that the group names belongs to the Jira platform, which is shared between Jira Core, Jira Software, and Jira Service Desk (the latter two are built on top of the platform). It might happen that group names are also stored in places specific to Jira Software or Jira Service Desk, and these won’t be updated. But I didn't find any mentions of group names in such tables.
  10. This script won’t update the group names in apps. The apps tables might contain mentions of group names. So you should probably check the tables manually. For example, pg_dump the tables and then use `grep` throw them with group names.
  11. If you find any group names in 8 and 9, just extend the script by adding update statements for these particular tables.
+ 12. Run re-index in Jira.
+ 13. Enjoy renamed groups!
